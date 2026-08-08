@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef6f5c01-1743-46f8-aab3-5cc253578fe9" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="26" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.4017859104003347" />
+      <entry key="MS500" value="3.0252350972997" />
+      <entry key="S2" value="5.1920870901706335" />
+      <entry key="S5" value="6.156673318067583" />
+      <entry key="S10" value="6.5548808368807325" />
+      <entry key="S30" value="6.846048028552723" />
+      <entry key="S60" value="6.923619401937882" />
+      <entry key="M2" value="7.042124780939322" />
+      <entry key="M5" value="7.946199422602952" />
+      <entry key="M10" value="9.185171237101946" />
+      <entry key="M15" value="9.881210190785117" />
+      <entry key="M30" value="10.861648250055032" />
+      <entry key="H1" value="13.235893765062311" />
+      <entry key="H2" value="22.036124389851828" />
+      <entry key="H4" value="42.57778698881243" />
+      <entry key="D1" value="168.0871909507211" />
+      <entry key="W1" value="238.08536752717066" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="1.5123692438552575E-173" />
+      <entry key="M5" value="7.444973131014466E-70" />
+      <entry key="M10" value="2.72854780625417E-35" />
+      <entry key="M15" value="9.063328297720687E-24" />
+      <entry key="M30" value="3.0105362143180837E-12" />
+      <entry key="H1" value="1.735089684805394E-6" />
+      <entry key="H2" value="0.0013172280306785879" />
+      <entry key="H4" value="0.036293636228388465" />
+      <entry key="D1" value="0.5754025033402447" />
+      <entry key="W1" value="0.9240814441726978" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.3719054439647145" />
+      <entry key="MS500" value="2.9748527618705425" />
+      <entry key="S2" value="5.165829144997129" />
+      <entry key="S5" value="6.1443614410545955" />
+      <entry key="S10" value="6.548383209591571" />
+      <entry key="S30" value="6.843802029557654" />
+      <entry key="S60" value="6.922486036215899" />
+      <entry key="M2" value="7.0415531999239835" />
+      <entry key="M5" value="7.945959992846992" />
+      <entry key="M10" value="9.1850443065748" />
+      <entry key="M15" value="9.881122876794562" />
+      <entry key="M30" value="10.861602688476253" />
+      <entry key="H1" value="13.235870126768152" />
+      <entry key="H2" value="22.03736575607971" />
+      <entry key="H4" value="42.613273098456716" />
+      <entry key="D1" value="168.66051090391974" />
+      <entry key="W1" value="239.00897208460026" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3HYFav1jLnlYwJITFbjbamvwdZD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/hermelahaile/Desktop/roomify/node_modules/typescript/lib"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef6f5c01-1743-46f8-aab3-5cc253578fe9" name="Changes" comment="" />
+      <created>1786037163150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786037163150</updated>
+      <workItem from="1786037164087" duration="25754000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/root.tsx</url>
+          <line>49</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
