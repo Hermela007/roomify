@@ -1,87 +1,101 @@
-# Welcome to React Router!
+# Roomify
 
-A modern, production-ready template for building full-stack React applications using React Router.
+**AI-powered architectural visualization** — upload a 2D floor plan, get back a photorealistic 3D top-down render in seconds. Built with React, TypeScript, and a fully serverless backend.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+<!-- Add a screenshot or GIF of the upload → render flow here -->
+
+## Overview
+
+Roomify turns a flat 2D floor plan sketch into a photorealistic 3D architectural render using AI, then lets you compare the original and rendered versions side by side with an interactive slider. Every project is saved to the signed-in user's account and shown in a public community feed.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **AI 2D-to-3D rendering** — converts an uploaded floor plan into a top-down photorealistic render using Google's Gemini image model.
+- **Before/after comparison** — drag-to-compare slider between the source sketch and the rendered output.
+- **Puter authentication** — sign in with a Puter account, no separate signup flow or password to manage.
+- **Persistent project history** — every upload and render is saved and reloadable by project ID.
+- **Permanent media hosting** — source images and renders get public, permanent URLs.
+- **Community feed** — a shared gallery of public projects on the homepage.
+- **Export** — download any rendered image directly from the editor.
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, TypeScript, React Router (SSR) |
+| Styling | Tailwind CSS |
+| Build tooling | Vite |
+| Backend | [Puter](https://puter.com) — serverless Workers, key-value storage, file hosting |
+| AI | Gemini (image generation) via Puter's hosted AI models |
+| Auth | Puter accounts (Puter.js SDK) |
+
+## Architecture Notes
+
+This project has **no backend server or database of its own**. Persistence, file hosting, authentication, and AI inference are all handled by [Puter](https://puter.com), an open-source "Internet OS" platform:
+
+- A small serverless [Puter Worker](lib/puter.worker.js) exposes a save/list/get API backed by Puter's key-value store — no server to provision or maintain.
+- Uploaded images and renders are written to Puter's file storage and served from permanent public URLs.
+- AI generation runs on Puter's **User-Pays model**: each signed-in visitor's own Puter account covers the cost of their AI usage, so hosting this app doesn't carry a per-request API bill for the developer.
 
 ## Getting Started
 
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) and npm
+- A free [Puter](https://puter.com) account
+
 ### Installation
 
-Install the dependencies:
-
 ```bash
+git clone https://github.com/Hermela007/roomify.git
+cd roomify
 npm install
 ```
 
-### Development
+### Environment Variables
 
-Start the development server with HMR:
+Create a `.env.local` file in the project root:
+
+```env
+VITE_PUTER_WORKER_URL=https://your-worker-name.puter.work
+```
+
+This URL comes from deploying `lib/puter.worker.js` as a Puter Worker (via `puter.workers.create`, either through Puter's desktop UI or the SDK).
+
+### Development
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Visit `http://localhost:5173`.
 
-## Building for Production
-
-Create a production build:
+### Production Build
 
 ```bash
 npm run build
+npm run start
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+Or with Docker:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+docker build -t roomify .
+docker run -p 3000:3000 roomify
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app/routes/         # Pages (home, visualizer)
+components/          # UI components (Upload, Navbar, buttons)
+lib/
+  puter.action.ts    # Auth + project CRUD (calls the deployed Worker)
+  puter.hosting.ts   # Image upload to Puter's permanent file hosting
+  puter.worker.js    # Serverless Worker: save/list/get projects in KV
+  ai.action.ts        # AI render generation via Puter's hosted Gemini model
 ```
 
-## Styling
+## Acknowledgements
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Built by following [JavaScript Mastery](https://www.youtube.com/@javascriptmastery)'s Roomify tutorial as a learning project, then extended and debugged independently — including fixing several bugs in the reference implementation, resolving Git branch/history issues, and diagnosing Vite/SSR caching problems along the way.
