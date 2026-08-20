@@ -2,7 +2,7 @@
 
 **AI-powered architectural visualization** — upload a 2D floor plan, get back a photorealistic 3D top-down render in seconds. Built with React, TypeScript, and a fully serverless backend.
 
-<!-- Add a screenshot or GIF of the upload → render flow here -->
+![Before and after: 2D floor plan converted into a photorealistic 3D render](public/readme/before-after.png)
 
 ## Overview
 
@@ -17,6 +17,14 @@ Roomify turns a flat 2D floor plan sketch into a photorealistic 3D architectural
 - **Permanent media hosting** — source images and renders get public, permanent URLs.
 - **Community feed** — a shared gallery of public projects on the homepage.
 - **Export** — download any rendered image directly from the editor.
+
+## Screenshots
+
+| Landing page | Upload flow |
+|---|---|
+| ![Roomify landing page](public/readme/hero.png) | ![Upload your floor plan dropzone](public/readme/upload.png) |
+
+![Project gallery of saved and community renders](public/readme/projects-gallery.png)
 
 ## Tech Stack
 
