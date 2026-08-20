@@ -8,38 +8,35 @@ import {
     isHostedUrl
 } from "./utils";
 
-type HostingConfig = { subdomain: string;};
-type HostedAsset = { url: string};
-
-export const getOrCreateHostingConfig = async(): Promise<HostingConfig | null> => {
+export const getOrCreateHostingConfig = async (): Promise<HostingConfig | null> => {
     const existing = (await puter.kv.get(HOSTING_CONFIG_KEY)) as HostingConfig | null;
 
-    if(existing?.subdomain) return {subdomain: existing.subdomain};
+    if(existing?.subdomain) return { subdomain: existing.subdomain };
 
     const subdomain = createHostingSlug();
 
     try {
         const created = await puter.hosting.create(subdomain, '.');
 
-        const record = {subdomain: created.subdomain};
+        const record = { subdomain: created.subdomain };
 
         await puter.kv.set(HOSTING_CONFIG_KEY, record);
 
-    } catch(e) {
+        return record;
+    } catch (e) {
         console.warn(`Could not find subdomain: ${e}`);
         return null;
     }
 }
 
-export const uploadImageToHosting = async ({ hosting, url, projectId, label}:
- StoreHostedImageParams): Promise<HostedAsset | null> => {
+export const uploadImageToHosting = async ({ hosting, url, projectId, label }: StoreHostedImageParams): Promise<HostedAsset | null> => {
     if(!hosting || !url) return null;
-    if(isHostedUrl(url)) return {url};
+    if(isHostedUrl(url)) return { url };
 
     try {
         const resolved = label === "rendered"
             ? await imageUrlToPngBlob(url)
-                .then((blob) => blob ? {blob, contentType: "image/png"} : null)
+                .then((blob) => blob ? { blob, contentType: 'image/png' }: null)
             : await fetchBlobFromUrl(url);
 
         if(!resolved) return null;
@@ -53,13 +50,13 @@ export const uploadImageToHosting = async ({ hosting, url, projectId, label}:
             type: contentType,
         });
 
-        await puter.fs.mkdir(dir, {createMissingParents: true});
+        await puter.fs.mkdir(dir, { createMissingParents: true });
         await puter.fs.write(filePath, uploadFile);
 
-        const hostedUrl = getHostedUrl({subdomain: hosting.subdomain}, filePath);
+        const hostedUrl = getHostedUrl({ subdomain: hosting.subdomain }, filePath);
 
-        return hostedUrl ? {url: hostedUrl} : null;
-    } catch(e) {
+        return hostedUrl ? { url: hostedUrl } : null;
+    } catch (e) {
         console.warn(`Failed to store hosted image: ${e}`);
         return null;
     }
