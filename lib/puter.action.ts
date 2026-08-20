@@ -88,7 +88,7 @@ export const createProject = async ({ item, visibility = "private" }: CreateProj
 
 export const getProjects = async () => {
     if(!PUTER_WORKER_URL) {
-        console.warn('Missing VITE_PUTER_WORKER_URL; skip history fetch;');
+        console.warn('Missing VITE_PUTER_WORKER_URL; skipping project save.');
         return []
     }
 
